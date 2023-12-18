@@ -1,0 +1,9 @@
+[Interface]
+PrivateKey = {client_private_key}
+Address = 10.0.0.{client_index}/32
+
+[Peer]
+PublicKey = {server_public_key}
+AllowedIPs = 10.10.10.10/32, 10.0.0.0/24
+Endpoint = server.ip.or.domain.com:50000
+PersistentKeepalive = 15
