@@ -3,7 +3,7 @@
 import sys
 import os
 
-# usage:  ./wg-cmaker.py <server_public_key> <ending_index> <starting_index> <output_base_name>
+# usage:  ./wg-cmaker.py <server_public_key> <starting_index> <ending_index> <output_base_name>
 # output: ./clients/<output_base_name>{<client_index>}
 
 
@@ -52,14 +52,14 @@ def generate_client(index: int, server_public_key: str, output_base_name: str):
 def check_argv() -> (str, int, str):
     if len(sys.argv) < 5:
         print(
-            "usage:  ./wg-cmaker.py <server_public_key> <ending_index> <starting_index> <output_base_name>"
+            "usage:  ./wg-cmaker.py <server_public_key> <starting_index> <ending_index> <output_base_name>"
         )
         exit(1)
         pass
 
     server_public_key = sys.argv[1]
-    ending_index = int(sys.argv[2])
-    starting_index = int(sys.argv[3])
+    starting_index = int(sys.argv[2])
+    ending_index = int(sys.argv[3])
     output_base_name = sys.argv[4]
 
     return server_public_key, ending_index, starting_index, output_base_name
