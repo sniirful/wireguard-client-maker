@@ -48,6 +48,10 @@ def generate_client(index: int, server_public_key: str, output_base_name: str):
     write_file(f"clients/{output_base_name}{index}.conf", client_config)
     return host_peer
 
+def create_folders():
+    os.system("mkdir tmp-files; mkdir clients")
+    pass
+
 
 def check_argv() -> (str, int, str):
     if len(sys.argv) < 5:
@@ -67,6 +71,7 @@ def check_argv() -> (str, int, str):
 
 if __name__ == "__main__":
     server_public_key, ending_index, starting_index, output_base_name = check_argv()
+    create_folders()
 
     print("Add the following block of text to your wireguard server configuration:")
     print("")
