@@ -30,7 +30,7 @@ def generate_client(index: int, server_public_key: str, output_base_name: str):
     public_key = read_file("tmp-files/publickey").strip()
 
     client_config = (
-        read_file("client-config-base.txt")
+        read_file("base-client-config.txt")
         .strip()
         .format(
             client_private_key=private_key,
@@ -39,7 +39,7 @@ def generate_client(index: int, server_public_key: str, output_base_name: str):
         )
     )
     host_peer = (
-        read_file("host-peer-base.txt")
+        read_file("base-host-peer.txt")
         .strip()
         .format(client_public_key=public_key, client_index=index)
     )
